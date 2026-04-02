@@ -1,0 +1,45 @@
+Belegbearbeitung
+----------------
+
+Belege sind für Einnahmen und Ausgaben vorgesehen.
+
+Einnahmenbeleg
+Ein entsprechender Beleg kann hochgeladen und der Buchung zugeordnet werden.
+Die Eingabefelder sind denen der Spendenquittung gleich:
+- Zahlender
+- Belegnummer
+- Belegdatum
+- Notiz
+- Positionen
+  + Zuordnung zu einem Finanzbereich (Sphäre)
+    o 1) Ideeller Bereich
+    o 2) Vermögensverwaltung
+    o 3) Zweckbetrieb
+    o 4) Wirtschaftlicher Geschäftsbetrieb
+    o 9) Sammelposten
+  + Steuerkonto
+  + Prozentsatz (z.B. 19% MwSt)
+  + Einnahmenbetrag
+- Zahlungsstatus (Checkbox)
+- Aktion: "Speichern & Zuordnen"
+
+
+Ausgabenbeleg
+Ein entsprechender Beleg kann hochgeladen und der Buchung zugeordnet werden.
+- Zahlender
+- Belegnummer
+- Belegdatum
+- Notiz
+- Positionen
+  + Zuordnung zu einem Finanzbereich (Sphäre)
+    o 1) Ideeller Bereich
+    o 2) Vermögensverwaltung
+    o 3) Zweckbetrieb
+    o 4) Wirtschaftlicher Geschäftsbetrieb
+    o 9) Sammelposten
+  + Steuerkonto
+  + Prozentsatz (z.B. 19% MwSt)
+  + Ausgabenbetrag
+- Zahlungsstatus (Checkbox)
+- Aktion: "Speichern & Zahlen" und "Speichern & Zuordnen"
+

@@ -1,0 +1,9 @@
+{
+  "type": "income",
+  "recipient": "Test Donor",
+  "number": "R-001",
+  "date": "2026-01-04",
+  "position_assignment": "1_ideel",
+  "amount": 100.00,
+  "note": "Donation"
+}

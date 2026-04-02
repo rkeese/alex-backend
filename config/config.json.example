@@ -1,0 +1,10 @@
+{
+    "port": "8080",
+    "database_url": "postgres://postgres:your_password@localhost:5433/alex_backend?sslmode=disable",
+    "jwt_secret": "CHANGE_ME_generate_a_random_secret",
+    "smtp_host": "smtp.example.com",
+    "smtp_port": "587",
+    "smtp_username": "your_smtp_user",
+    "smtp_password": "your_smtp_password",
+    "smtp_from": "noreply@yourdomain.com"
+}

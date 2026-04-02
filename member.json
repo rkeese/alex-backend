@@ -1,0 +1,12 @@
+{
+  "first_name": "Max",
+  "last_name": "Mustermann",
+  "birth_date": "1990-01-01",
+  "gender": "male",
+  "status": "active",
+  "member_number": "M001",
+  "street_house_number": "Main St 1",
+  "postal_code": "12345",
+  "city": "Test City",
+  "joined_at": "2024-01-01"
+}

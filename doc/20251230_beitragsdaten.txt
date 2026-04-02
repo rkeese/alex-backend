@@ -1,0 +1,21 @@
+Beiträge & Spenden
+------------------
+Standard
+Typ: Standardbeitrag, Beitrag nach Alter, Beitrag nach Mitgliedsdauer, Zusatzleistungen, Spende
+
+Zeitraum: Jährlich, Monatlich, Quartalsweise, Halbjährig, Einmalig
+
+Abrechnungszeitraum: Vorschüssig, Nachschüssig, Aktuell
+
+MwSt.
+
+Betrag
+
+Sphäre: 1 Ideeller Bereich, 2 Vermögensverwaltung, 3 Zweckbetrieb, 4 Wirtschaftlicher Geschäftsbetrieb, 9 Sammelposten
+
+Steuerkonto
+Steuerkonto auswählen
+
+Tags
+Tag hinzufügen
+Verwendungszweck / Rechnungsposition

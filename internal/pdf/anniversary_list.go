@@ -1,0 +1,47 @@
+package pdf
+
+import (
+	"bytes"
+	"fmt"
+	"time"
+
+	"github.com/jung-kurt/gofpdf"
+)
+
+type AnniversaryEntry struct {
+	Date            time.Time
+	FirstName       string
+	LastName        string
+	MembershipYears int
+}
+
+func GenerateAnniversaryList(clubName string, year int, entries []AnniversaryEntry) ([]byte, error) {
+	pdf := gofpdf.New("P", "mm", "A4", "")
+	tr := pdf.UnicodeTranslatorFromDescriptor("") // Use default cp1252 translator
+
+	pdf.AddPage()
+	pdf.SetFont("Arial", "B", 16)
+	pdf.Cell(0, 10, tr(fmt.Sprintf("%s - Jubiläumsliste %d", clubName, year)))
+	pdf.Ln(12)
+
+	pdf.SetFont("Arial", "B", 12)
+	pdf.Cell(40, 10, "Datum")
+	pdf.Cell(80, 10, "Name")
+	pdf.Cell(30, 10, "Jahre")
+	pdf.Ln(10)
+
+	pdf.SetFont("Arial", "", 12)
+	for _, entry := range entries {
+		pdf.Cell(40, 10, entry.Date.Format("02.01."))
+		pdf.Cell(80, 10, tr(fmt.Sprintf("%s %s", entry.FirstName, entry.LastName)))
+		pdf.Cell(30, 10, fmt.Sprintf("%d", entry.MembershipYears))
+		pdf.Ln(8)
+	}
+
+	var buf bytes.Buffer
+	err := pdf.Output(&buf)
+	if err != nil {
+		return nil, err
+	}
+	return buf.Bytes(), nil
+}

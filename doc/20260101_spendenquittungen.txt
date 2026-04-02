@@ -1,0 +1,23 @@
+Spendenquittung
+---------------
+
+Einer Spendenquittung wird ein Beleg zugeordnet.
+Dieser Beleg wird als Datei hochgeladen.
+
+Folgende Felder sollen in der Eingabemaske für eine Spende vorgesehen werden.
+
+- Zuwender
+- Belegnummer
+- Spendendatum
+- Notiz
+- Positionen
+  + Zuordnung zu einem Finanzbereich (Sphäre)
+    o 1) Ideeller Bereich
+    o 2) Vermögensverwaltung
+    o 3) Zweckbetrieb
+    o 4) Wirtschaftlicher Geschäftsbetrieb
+    o 9) Sammelposten
+  + Steuerkonto
+  + Prozentsatz (z.B. 19% MwSt)
+  + Spendenbetrag
+- Zahlungsstatus

@@ -1,0 +1,45 @@
+Im Rahmen der Systemadministration müssen Anforderungen nachgeschärft und ggf. implementiert werden.
+Backend:
+Administratoren
+	Es muss zwei verschiedene Arten von Administrationen geben:
+	1. Systemadministrator (Sys-Admin)
+	  Dieser soll das gesamten System bestehend aus Backend, Frontend sowie Datenbank und
+	  über Club-Grenzen hinaus administrieren können.
+	  Der Systemadministrator muss in der Lage sein einen Club-Administrator sperren zu können.
+	  Es darf nur einen Systemadministrator geben und dieser muss inital, wenn das System aufgesetzt
+	  wird, festgelegt werden.
+	2. Club-Administrator
+	  Ein Club-Administrator adminstriert nur in den Club-Grenzen und kann auf keinen anderen
+	  Club zugreifen. Der Club-Administrator ist der, der den Club initial anlegt.
+	  Ein Club-Administrator kann ein anderes Mitglied als Club-Administrator bestimmen.
+      Ein Club-Administrator kann Mitglieder als Nutzer einladen und die Nutzerrechte für
+	  die eingeladenen Nutzer vergeben.
+
+Initial benötigen wir verschiedene Anmelde-Szenarie.
+	1. Es soll möglich sein einen neuen Verein anzulegen.
+	  Bei diesem Szenario muss der Vereinsname und der Nutzer erfasst werden.
+	  Der Verein darf noch nicht existieren.
+	  Wenn der Nutzer unbekannt ist muss sich dieser beim Sys-Admin registrieren.
+	  Ein bereits registrierter Nutzer kann durch Eingabe des Vereinsnamen und seinen
+	  Credentials den Verein direkt anlegen.
+	2. Bei einem bereits existierenden Verein können neue Nutzer nur durch den Club-Administrator
+	  hinzugefügt werden.
+	  Der Club-Administrator wählt ein vorhandenes Vereinsmitglied aus der Mitgliederliste aus,
+	  das Verwaltungsaufgaben übernehmen soll. Das ausgewählte Mitglied wird vom System über seine
+	  Email-Adresse informiert und bekommt die Anmelde-Credentials zugesendet.
+	  Bei der erstmaligen Anmeldung muss der neue Nutzer seine vom System gesendeten Credentials
+	  ändern.
+
+Die hier beschriebenen Funktionen müssen über REST-Endpoints abgebildet werden, so dass
+sie im Frontend implementiert werden können.
+
+Frontend:
+Um die hier beschriebenen Anforderungen am Frontend abbilden zu können, muss der
+Anmelde-View das Anlegen eines neuen Vereins ermöglichen und für bereits registrierte Nutzer
+die Eingabe der Credentials ermöglichen.
+In der Mitgliederliste sollte es die Möglichkeit geben ein Mitglied auszuwählen und einzuladen.
+Diesem Mitglied können dann vom Club-Aministrator Verwaltungsrechte zugewiesen werden.
+
+
+-------------------------------------------------------------------------------------
+

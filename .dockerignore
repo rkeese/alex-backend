@@ -1,0 +1,35 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+
+# Documentation (not needed at build time)
+*.md
+API_TEST_LOG.md
+ideas.txt
+error.txt
+server.err
+test_doc.txt
+
+# Test files
+tests/
+requests.http
+
+# Local config (Docker uses its own)
+config/config.json
+
+# Docker files
+docker-compose.yml
+Dockerfile
+
+# PowerShell scripts
+*.ps1
+
+# JSON test data
+member.json
+event.json
+receipt.json
+booking_account.json

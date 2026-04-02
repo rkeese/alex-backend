@@ -1,0 +1,57 @@
+Vereinsdaten
+------------
+Checkbox: "Es handelt sich um einen eingetragenen Verein"
+Möglichkeit zum Hochladen des Vereinslogo
+Vereinsname
+Abweichende Bezeichnung
+Art des Vereins: Sportverein, Musikverein, Gesellschaftsverein, Umwelt-/ Naturschutzverein, Kulturverein, Hobby-/ Freizeitverein, Sozial-/ Rettungsdienst
+Vereinskategorie: Sportverein --> Fußball, Golf, Handball, Kampfsport, Leichtathletik, Luftsport, Radsport Schießsport, Schwimmen, Sonstiger Ballsport, Tennis, Turnsport, Wassersport, Wintersport, Sonstiges
+Vereins-Nummer
+Straße & Hausnummer
+Zweite Adresszeile
+PLZ
+Ort
+Telefon
+Checkbox: "Im Online-Portal sichtbar"
+E-Mail
+Checkbox: "Im Online-Portal sichtbar"
+
+Briefanreden
+Wie möchtest Du Mitglieder in Briefen ansprechen? Die Anrede kann zusätzlich in jedem Kontaktprofil individualisiert werden.
+Hier kannst Du Anreden verwalten und neue hinzufügen.
+
+Titel
+Hier kannst Du Titel verwalten, favorisieren und neue hinzufügen.
+
+Bankverbindung
+Erfasse hier die Kontoverbindung deines Vereins und lege Steuereinstellungen fest.
+Name des Kontoinhabers
+Gläubiger-ID
+IBAN
+BIC
+PayPal.Me-Link
+
+Steuereinstellungen
+Gib hier die steuerrelevanten Daten deines Vereins an. Die angegeben Informationen legen fest, ob du in MEINVEREIN Steuern ausweisen kannst und sind relevant für das Befüllen deiner Spendenbescheinigungen.
+
+Zuständiges Finanzamt
+Steuernummer (E-Rechnungspflicht)
+Umsatzsteuer-ID (E-Rechnungspflicht)
+Veranlagungszeitraum
+Förderungszweck
+Datum des Bescheids
+Art des Bescheids
+
+Steuerkontenrahmen
+SKR42 (gültig ab 2025)
+
+Kleinunternehmerregelung
+Als Kleinunternehmern im Sinne von § 19 Abs. 1 UstG wird keine Umsatzsteuer berechnet.
+Spendenbescheinigung
+Der elektronische Versand maschinell erzeugter Spendenbescheinigungen wurde an das Finanzamt angezeigt.
+Ich bin mir bewusst, dass der Verein für die eigenständige Archivierung der Spendenbescheinigung verantwortlich ist.
+Erklärung zur maschinellen Erstellung der Bescheinigung ohne Unterschrift
+Die maschinelle Erstellung von Zuwendungsbescheinigungen ohne eigenhändige Unterschrift einer zeichnungsberechtigten Person wurde dem Finanzamt <Name des Finanzamts> gemäß R 10b.1 Abs. 4 EStR angezeigt.
+
+Vereinsstruktur
+Hier kannst du die Abteilungen und Unterabteilungen deines Vereins definieren. Um eine neue Vereinskategorie anzulegen, klicke einfach auf das orange „+“-Symbol.

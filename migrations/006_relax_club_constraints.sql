@@ -1,0 +1,11 @@
+-- Migration 006: Relax club constraints for easier registration
+ALTER TABLE clubs ALTER COLUMN number DROP NOT NULL;
+ALTER TABLE clubs ALTER COLUMN street_house_number DROP NOT NULL;
+ALTER TABLE clubs ALTER COLUMN postal_code DROP NOT NULL;
+ALTER TABLE clubs ALTER COLUMN city DROP NOT NULL;
+ALTER TABLE clubs ALTER COLUMN tax_office_name DROP NOT NULL;
+ALTER TABLE clubs ALTER COLUMN tax_office_tax_number DROP NOT NULL;
+ALTER TABLE clubs ALTER COLUMN tax_office_assessment_period DROP NOT NULL;
+ALTER TABLE clubs ALTER COLUMN tax_office_purpose DROP NOT NULL;
+ALTER TABLE clubs ALTER COLUMN tax_office_decision_date DROP NOT NULL;
+ALTER TABLE clubs ALTER COLUMN tax_office_decision_type DROP NOT NULL;

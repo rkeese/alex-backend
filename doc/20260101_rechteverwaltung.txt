@@ -1,0 +1,70 @@
+Rechteverwaltung
+----------------
+
+Die Rechteverwaltung bezieht sich auf die jeweils angelegte Rolle.
+Die Rollen werden vom Administrator vergeben und entsprechend werden auch die Rechte vom Administrator eingestellt.
+Die Rechte beziehen sich auf Module und die untergeordneten Funktionen.
+
+Aktuell sind folgende Module mit den jeweils untergeordneten Funktionen vorgesehen.
+- Dashboard
+  + Dashboard
+  + Widget: Onboarding
+  + Widget: Finanzstatistiken
+  + Widget: Finanzvergleich
+  + Widget: Geburtstagsstatistiken
+  + Widget: Jubiläumsstatistiken
+  + Widget: Mitgliederstatistiken
+- Kontakte
+  + Alle Kontakte
+  + Geburtstage
+- Listen
+  + Datenimport
+- Mitglieder
+  + Aktuelle Mitglieder
+  + Alle Mitglieder
+  + Ehemalige Mitglieder
+  + Jubiläumsliste
+- Abteilungen
+- Verbandsmeldungen
+- Spenden
+  + Spenden
+  + Wissen & Kurse
+- Kalender
+  + Termine
+  + Geburtstage Mitglieder
+  + Geburtstage Kontakte
+- Organisation
+  + Chat
+  + E-Mails
+  + Briefe
+- Dokumente
+  + Allgemeines
+  + Protokolle
+- Freie Listen
+- Finanzen
+  + Bank & Kasse
+  + Beitragsabrechnung
+  + Belege
+  + Lastschriften
+  + Finanzexport
+  + Auswertungen
+- Einstellungen
+  + Vereinsdaten
+  + Account
+  + Rollen & Rechte
+  + Nummernkreis
+  + Beiträge & Spenden
+  + Leistungen
+  + Textbausteine
+  + Briefpapier
+- Vereinsportal
+  + Vereinsprofil
+  + Mein Profil
+  + Mitgliedsantrag
+
+Folgende Einstellmöglichkeiten sollen vorgesehen werden
+- Sperren
+- Lesen
+- Bearbeiten
+- Bearbeiten & Löschen
+

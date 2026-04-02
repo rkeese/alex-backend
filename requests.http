@@ -1,0 +1,75 @@
+@baseUrl = http://localhost:8080/api/v1
+@authToken = {{login.response.body.token}}
+
+### Login (Get Token)
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "your_email@example.com",
+    "password": "your_password"
+}
+
+### ---------------------------------------------------
+### Calendar Events
+### ---------------------------------------------------
+
+### Create Event
+POST {{baseUrl}}/calendar/events
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "date": "2026-03-15",
+    "time": "19:00",
+    "description": "Vorstandssitzung"
+}
+
+### List Events
+GET {{baseUrl}}/calendar/events
+Authorization: Bearer {{authToken}}
+
+### Update Event
+# Replace :id with an actual ID from the list response
+PUT {{baseUrl}}/calendar/events/1
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "date": "2026-03-16",
+    "time": "19:00",
+    "description": "Vorstandssitzung (Verschoben)"
+}
+
+### Delete Event
+# Replace :id with an actual ID
+DELETE {{baseUrl}}/calendar/events/1
+Authorization: Bearer {{authToken}}
+
+### ---------------------------------------------------
+### Documents
+### ---------------------------------------------------
+
+### Upload Document
+# Note: This requires multipart/form-data support. 
+# VS Code REST Client supports it, but you might need to point to a real file.
+POST {{baseUrl}}/documents
+Authorization: Bearer {{authToken}}
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="test.txt"
+Content-Type: text/plain
+
+This is a test document content.
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### List Documents
+GET {{baseUrl}}/documents
+Authorization: Bearer {{authToken}}
+
+### Download Document
+# Replace :id with an actual ID
+GET {{baseUrl}}/documents/1/download
+Authorization: Bearer {{authToken}}

@@ -1,0 +1,15 @@
+meta {
+  name: Get clubs
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8081/api/v1/clubs
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

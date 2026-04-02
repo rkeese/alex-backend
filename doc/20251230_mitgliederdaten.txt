@@ -1,0 +1,92 @@
+Mitgliederinformationen
+-----------------------
+Mitgliedsnummer
+Anrede: keine Angabe, Herr, Frau, Familie
+Briefanrede: Formell (Sehr geehrte Damen und Herren), Persönlich (Lieber Raimund), Manuell (keine Textvorgabe)
+Vorname
+Nachname
+Geburtstag
+Telefon
+Telefon Notiz
+Telefon2
+Telefon2 Notiz
+Mobil
+Mobil Notiz
+Account E-Mail
+Kommunikations-E-Mail (optional - für die Kommunikation mit dem Verein)
+Strasse und Hausnummer
+Zweite Adresszeile
+Postfachnummer (optional)
+PLZ
+Ort
+Land
+
+Ansprechpartner:
+Erfasse hier Ansprechpartner zu diesem Profil. Bei Mitgliedern können das beispielsweise Erziehungsberechtigte oder Familienangehörige sein. Bei Firmen handelt es sich meist um direkte Kontakte, mit denen man in Verbindung steht. Du kannst nicht nur manuell Daten erfassen, sondern auch eine Verknüpfung zu bestehenden Profilen vornehmen. Wird ein Ansprechpartner als Rechnungsempfänger markiert, übernehmen wir ihn automatisch als Zahler für das Profil.
+Hier kann ein bestehendes Mitglied verknüpft werden z.B. über Mitgliedsnummer
+alternativ
+Anrede
+Geschlecht
+Briefanrede
+Vorname
+Nachname
+Straße & Hausnummer
+Zweite Adresszeile
+Plz
+Ort
+Land
+Funktion
+Titel
+Bevorzugter Kommunikationsweg: Post/Brief
+Telefonnummer
+E-Mail Adresse
+Checkbox: "Als Rechnungsempfänger übernehmen"
+Checkbox: "Als Korrespondenzempfänger für Briefe und E-Mails übernehmen"
+
+
+Mitgliedschaft & Vereinsstruktur
+Hier kannst du das Mitglied in die Vereinsstruktur deines Vereins integrieren. Die Vereinsstruktur kannst du in den Einstellungen bearbeiten. Bereits angelegte Mitgliedschaften können nicht mehr angepasst werden. Lediglich eine weitere Abteilungsebene und ein Austrittsdatum können hinzugefügt werden. Um eine Mitgliedschaft zu korrigieren, muss die angelegte Mitgliedschaft gelöscht und eine neue Mitgliedschaft angelegt werden. Achtung: Gelöschte Mitgliedschaften können nicht bei der Verbandsmeldung berücksichtigt werden.
+Mitglied seit
+Ebene 1
+Ebene 2
+Ebene 3
+Ehrenmitglied Ja, Nein
+Status Aktiv, Passiv
+Mitglied bis
+
+Beitrag (Bezeichnung)
+Beitrag (Typ)
+Beitrag (Betrag)
+Beitrag (Zeitraum)
+Beitrag (Fälligkeit)
+Notizen
+Geschlecht keine Angabe, männlich, weiblich
+Familienstand: Auswählen, geschieden, eheähnliche Gemeinschaft, verheiratet, eingetragene Lebenspartnerschaft, getrennt lebend, ledig, verwitwet
+Titel: keine Angabe, Dr., Prof., Prof. Dr., Dipl.Ing., Dipl.Ing.agr, Dipl.-Kfm, Dipl.-Med, Dr. med, Dr. phil. Dr. rer. nat., Graf, Pastor, Pfarrer
+Zahlungsart
+
+Neue Kontoverbindung / SEPA-Mandat erfassen
+Erfasse hier die Kontoverbindung und gegebenenfalls das vorliegende SEPA-Lastschriftmandat für dieses Mitglied.
+Name des Kontoinhabers
+IBAN
+BIC (wird automatisch ergänzt)
+Checkbox: "SEPA-Mandat vorhanden"
+Mandatsreferenz: die Mitgliedsnummer
+Mandatstyp: Basismandat
+SEPA-Mandat erteilt am (Datum)
+Art des Mandats: Bis auf Widerruf, Einmalig
+Art der nächsten Lastschrift: Erste Lastschrift, Folgelastschrift, letzte Lastschrift
+letzte Verwendung
+Gültig bis: drei Jahre
+
+Zahlungsart
+per Lastschrift
+per Rechnung
+Anderes Mitglied/Kontakt
+
+Notizfeld
+
+Dateiablage: Möglichkeit Datei hochzuladen
+
+Alias
+Hier kannst du Aliasse für den Kreditor und Debitor erfassen.
