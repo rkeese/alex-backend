@@ -65,7 +65,7 @@ func main() {
 	}
 
 	_, err = conn.Exec(ctx,
-		"UPDATE users SET password_hash = $1, must_change_password = false, updated_at = NOW() WHERE email = $2",
+		"UPDATE users SET password_hash = $1, must_change_password = false, failed_login_attempts = 0, locked_until = NULL, updated_at = NOW() WHERE email = $2",
 		hash, *email)
 	if err != nil {
 		log.Fatalf("Failed to update password: %v", err)

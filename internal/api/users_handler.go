@@ -453,6 +453,9 @@ func (s *Server) handleAdminResetPassword(w http.ResponseWriter, r *http.Request
 		return
 	}
 
+	// Also clear brute-force lockout
+	_ = s.Queries.ResetFailedLoginAttempts(r.Context(), uuidToPgtype(targetUserID))
+
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(ResetPasswordResponse{Password: newPassword})
 }
