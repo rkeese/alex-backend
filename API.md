@@ -562,6 +562,15 @@
 *   **Description:** Downloads a CSV file containing complete member data including personal details, bank account, and fee information.
 *   **Response:** CSV file download (`text/csv`).
 
+### Export Member Contact List (PDF)
+*   **URL:** `/api/v1/members/contact-list/pdf`
+*   **Method:** `GET`
+*   **Headers:**
+    *   `Authorization: Bearer <token>`
+    *   `X-Club-ID: <club_id>`
+*   **Description:** Downloads a PDF document listing all members with their contact information (name, address, phone numbers, mobile, email), sorted by last name. The PDF is in landscape format (A4) with a tabular layout.
+*   **Response:** Binary PDF file (`application/pdf`).
+
 ## Departments
 
 ### List Departments

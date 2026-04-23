@@ -1347,3 +1347,48 @@ func (s *Server) handleExportMembersCSV(w http.ResponseWriter, r *http.Request) 
 		}
 	}
 }
+
+func (s *Server) handleExportMembersContactPDF(w http.ResponseWriter, r *http.Request) {
+	clubID, ok := r.Context().Value(clubIDKey).(uuid.UUID)
+	if !ok {
+		http.Error(w, "Club ID not found in context", http.StatusInternalServerError)
+		return
+	}
+
+	members, err := s.Queries.ListMemberDetails(r.Context(), uuidToPgtype(clubID))
+	if err != nil {
+		http.Error(w, "Failed to list members", http.StatusInternalServerError)
+		return
+	}
+
+	club, err := s.Queries.GetClubByID(r.Context(), uuidToPgtype(clubID))
+	if err != nil {
+		http.Error(w, "Failed to fetch club details", http.StatusInternalServerError)
+		return
+	}
+
+	var entries []pdf.ContactEntry
+	for _, m := range members {
+		entries = append(entries, pdf.ContactEntry{
+			MemberNumber:      m.MemberNumber,
+			FirstName:         m.FirstName,
+			LastName:          m.LastName,
+			StreetHouseNumber: m.StreetHouseNumber.String,
+			PostalCode:        m.PostalCode.String,
+			City:              m.City.String,
+			Phone1:            m.Phone1.String,
+			Mobile:            m.Mobile.String,
+			Email:             m.Email.String,
+		})
+	}
+
+	pdfBytes, err := pdf.GenerateContactList(club.Name, entries)
+	if err != nil {
+		http.Error(w, "Failed to generate PDF", http.StatusInternalServerError)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/pdf")
+	w.Header().Set("Content-Disposition", "attachment; filename=\"kontaktliste.pdf\"")
+	w.Write(pdfBytes)
+}

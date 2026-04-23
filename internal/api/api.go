@@ -60,6 +60,7 @@ func (s *Server) Routes() http.Handler {
 	mux.Handle("DELETE /api/v1/members/{id}", s.AuthMiddleware(s.RequirePermission("members:delete", s.handleDeleteMember)))
 	mux.Handle("POST /api/v1/members/import", s.AuthMiddleware(s.RequirePermission("members:write", s.handleImportMembers)))
 	mux.Handle("GET /api/v1/members/export", s.AuthMiddleware(s.RequirePermission("members:read", s.handleExportMembersCSV)))
+	mux.Handle("GET /api/v1/members/contact-list/pdf", s.AuthMiddleware(s.RequirePermission("members:read", s.handleExportMembersContactPDF)))
 
 	// Departments
 	mux.Handle("POST /api/v1/departments", s.AuthMiddleware(s.RequirePermission("departments:write", s.handleCreateDepartment)))
