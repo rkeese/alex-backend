@@ -84,7 +84,7 @@ func (q *Queries) GetRoleByName(ctx context.Context, name string) (Role, error) 
 
 const getUserByEmail = `-- name: GetUserByEmail :one
 SELECT id, email, password_hash, created_at, updated_at, is_sys_admin, must_change_password, is_blocked, failed_login_attempts, locked_until FROM users
-WHERE email = $1 LIMIT 1
+WHERE LOWER(email) = LOWER($1) LIMIT 1
 `
 
 func (q *Queries) GetUserByEmail(ctx context.Context, email string) (User, error) {

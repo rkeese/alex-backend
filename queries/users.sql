@@ -5,7 +5,7 @@ RETURNING *;
 
 -- name: GetUserByEmail :one
 SELECT * FROM users
-WHERE email = $1 LIMIT 1;
+WHERE LOWER(email) = LOWER($1) LIMIT 1;
 
 -- name: GetUserByID :one
 SELECT * FROM users
