@@ -3,6 +3,7 @@ package pdf
 import (
 	"bytes"
 	"fmt"
+	"os"
 	"strings"
 	"testing"
 
@@ -108,4 +109,49 @@ func TestGenerateContactListMobileMapping(t *testing.T) {
 	if len(pdfBytes) == 0 {
 		t.Error("Generated PDF is empty")
 	}
+}
+
+func TestGenerateContactListMobileInCompressedPDF(t *testing.T) {
+	entries := []ContactEntry{
+		{
+			MemberNumber:      "M001",
+			FirstName:         "Max",
+			LastName:          "Mustermann",
+			StreetHouseNumber: "Teststr. 1",
+			PostalCode:        "12345",
+			City:              "Berlin",
+			Phone1:            "030-1234567",
+			Mobile:            "0171-9876543",
+			Email:             "max@test.de",
+		},
+		{
+			MemberNumber:      "M002",
+			FirstName:         "Erika",
+			LastName:          "Musterfrau",
+			StreetHouseNumber: "Hauptstr. 5",
+			PostalCode:        "54321",
+			City:              "Hamburg",
+			Phone1:            "",
+			Mobile:            "0172-1111111",
+			Email:             "erika@test.de",
+		},
+	}
+
+	// Use the actual GenerateContactList (compressed)
+	pdfBytes, err := GenerateContactList("Testverein", entries)
+	if err != nil {
+		t.Fatalf("GenerateContactList failed: %v", err)
+	}
+
+	if len(pdfBytes) < 500 {
+		t.Errorf("PDF suspiciously small: %d bytes", len(pdfBytes))
+	}
+
+	// Write PDF to temp file for manual inspection if needed
+	tmpFile := t.TempDir() + "/kontaktliste_test.pdf"
+	if err := os.WriteFile(tmpFile, pdfBytes, 0644); err != nil {
+		t.Fatalf("Failed to write test PDF: %v", err)
+	}
+	t.Logf("Test PDF written to: %s", tmpFile)
+	t.Logf("PDF size: %d bytes", len(pdfBytes))
 }

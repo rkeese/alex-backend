@@ -1377,7 +1377,7 @@ func (s *Server) handleExportMembersContactPDF(w http.ResponseWriter, r *http.Re
 			PostalCode:        m.PostalCode.String,
 			City:              m.City.String,
 			Phone1:            m.Phone1.String,
-			Mobile:            m.Mobile.String,
+			Mobile:            m.Phone2.String,
 			Email:             m.Email.String,
 		})
 	}

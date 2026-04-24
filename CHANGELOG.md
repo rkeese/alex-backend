@@ -25,7 +25,9 @@
   - `internal/api/api.go` – Route registriert
 
 ### Fixed
-- **Kontaktliste PDF: Mobilnummer, Telefon, E-Mail und weitere Felder wurden nicht angezeigt.** Alle Textfelder werden nun korrekt über den Unicode-Translator (`tr()`) von gofpdf kodiert, sodass Mobilnummern, Telefonnummern, E-Mail-Adressen, Postleitzahlen und Mitgliedsnummern im PDF korrekt dargestellt werden.
+- **Kontaktliste PDF: Mobilnummer wurde nicht angezeigt.** Das Frontend verwendet `phone2` für Mobilnummern, aber der PDF-Export las aus dem unbenutzten Feld `mobile`. Der PDF-Export liest nun `phone2` als Mobilnummer, sodass die im Frontend eingegebenen Mobilnummern korrekt im PDF erscheinen.
+  - `internal/api/members_handler.go` – `handleExportMembersContactPDF()`: `m.Phone2.String` statt `m.Mobile.String`
+- **Kontaktliste PDF: Textfelder-Encoding korrigiert.** Alle Textfelder werden nun korrekt über den Unicode-Translator (`tr()`) von gofpdf kodiert.
   - `internal/pdf/contact_list.go` – alle `CellFormat`-Aufrufe verwenden nun `tr()`
 - **Login ist nicht mehr case-sensitiv:** E-Mail-Adressen werden bei Login, Registrierung, Einladung und Vorstandserstellung auf Kleinbuchstaben normalisiert (`strings.ToLower`). Damit funktioniert der Login jetzt unabhängig von Groß-/Kleinschreibung.
   - `internal/api/auth_handler.go` – `handleLogin()` und `handleRegister()`
