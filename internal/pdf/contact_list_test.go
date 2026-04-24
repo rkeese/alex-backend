@@ -3,37 +3,27 @@ package pdf
 import (
 	"bytes"
 	"fmt"
+	"strings"
+	"testing"
 
 	"github.com/jung-kurt/gofpdf"
 )
 
-type ContactEntry struct {
-	MemberNumber      string
-	FirstName         string
-	LastName          string
-	StreetHouseNumber string
-	PostalCode        string
-	City              string
-	Phone1            string
-	Mobile            string
-	Email             string
-}
-
-func GenerateContactList(clubName string, entries []ContactEntry) ([]byte, error) {
+// generateContactListUncompressed mirrors GenerateContactList but with compression
+// disabled so that text content can be verified in raw PDF bytes.
+func generateContactListUncompressed(clubName string, entries []ContactEntry) ([]byte, error) {
 	pdf := gofpdf.New("L", "mm", "A4", "")
+	pdf.SetCompression(false)
 	tr := pdf.UnicodeTranslatorFromDescriptor("")
 
-	// Reduce margins to maximize usable width: 297 - 2*5 = 287mm
 	pdf.SetMargins(5, 10, 5)
 	pdf.SetAutoPageBreak(true, 10)
 	pdf.AddPage()
 
-	// Title
 	pdf.SetFont("Arial", "B", 14)
 	pdf.Cell(0, 8, tr(fmt.Sprintf("%s - Kontaktliste", clubName)))
 	pdf.Ln(10)
 
-	// Column widths tuned to 287mm total
 	colWidths := []float64{18, 32, 32, 55, 15, 32, 30, 30, 43}
 	headers := []string{"Mitgl.Nr.", "Nachname", "Vorname", "Straße & Hausnr.", "PLZ", "Ort", "Telefon", "Mobil", "E-Mail"}
 	_, pageH, _ := pdf.PageSize(pdf.PageNo())
@@ -49,7 +39,6 @@ func GenerateContactList(clubName string, entries []ContactEntry) ([]byte, error
 
 	printHeader()
 
-	// Table rows
 	pdf.SetFont("Arial", "", 7)
 	for _, e := range entries {
 		if pdf.GetY()+6 > pageH-10 {
@@ -57,7 +46,6 @@ func GenerateContactList(clubName string, entries []ContactEntry) ([]byte, error
 			printHeader()
 			pdf.SetFont("Arial", "", 7)
 		}
-
 		pdf.CellFormat(colWidths[0], 6, tr(e.MemberNumber), "1", 0, "", false, 0, "")
 		pdf.CellFormat(colWidths[1], 6, tr(e.LastName), "1", 0, "", false, 0, "")
 		pdf.CellFormat(colWidths[2], 6, tr(e.FirstName), "1", 0, "", false, 0, "")
@@ -76,4 +64,48 @@ func GenerateContactList(clubName string, entries []ContactEntry) ([]byte, error
 		return nil, err
 	}
 	return buf.Bytes(), nil
+}
+
+func TestGenerateContactListMobileMapping(t *testing.T) {
+	entries := []ContactEntry{
+		{
+			MemberNumber:      "M001",
+			FirstName:         "Max",
+			LastName:          "Mustermann",
+			StreetHouseNumber: "Teststr. 1",
+			PostalCode:        "12345",
+			City:              "Berlin",
+			Phone1:            "030-1234567",
+			Mobile:            "0171-9876543",
+			Email:             "max@test.de",
+		},
+	}
+
+	pdfBytes, err := generateContactListUncompressed("Testverein", entries)
+	if err != nil {
+		t.Fatalf("GenerateContactList failed: %v", err)
+	}
+
+	content := string(pdfBytes)
+
+	checks := map[string]string{
+		"MemberNumber": "M001",
+		"LastName":     "Mustermann",
+		"FirstName":    "Max",
+		"PostalCode":   "12345",
+		"City":         "Berlin",
+		"Phone1":       "030-1234567",
+		"Mobile":       "0171-9876543",
+		"Email":        "max@test.de",
+	}
+
+	for field, val := range checks {
+		if !strings.Contains(content, val) {
+			t.Errorf("%s value %q not found in PDF output", field, val)
+		}
+	}
+
+	if len(pdfBytes) == 0 {
+		t.Error("Generated PDF is empty")
+	}
 }

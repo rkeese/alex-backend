@@ -18,7 +18,15 @@
     - `internal/api/users_handler.go` – `handleUpdateUser()` ruft `ResetFailedLoginAttempts` auf
   - **ListUsers erweitert:** Admin-Endpoint `/api/v1/users` liefert nun auch `failed_login_attempts` und `locked_until` Felder.
 
+### Added
+- **Kontaktliste als PDF-Export:** Neuer Endpoint `GET /api/v1/members/contact-list/pdf` zum Download einer Kontaktliste aller Mitglieder als PDF (Querformat A4). Enthält Mitgliedsnummer, Name, Adresse, Telefon, Mobil und E-Mail.
+  - `internal/pdf/contact_list.go` – PDF-Generator für die Kontaktliste
+  - `internal/api/members_handler.go` – `handleExportMembersContactPDF()`
+  - `internal/api/api.go` – Route registriert
+
 ### Fixed
+- **Kontaktliste PDF: Mobilnummer, Telefon, E-Mail und weitere Felder wurden nicht angezeigt.** Alle Textfelder werden nun korrekt über den Unicode-Translator (`tr()`) von gofpdf kodiert, sodass Mobilnummern, Telefonnummern, E-Mail-Adressen, Postleitzahlen und Mitgliedsnummern im PDF korrekt dargestellt werden.
+  - `internal/pdf/contact_list.go` – alle `CellFormat`-Aufrufe verwenden nun `tr()`
 - **Login ist nicht mehr case-sensitiv:** E-Mail-Adressen werden bei Login, Registrierung, Einladung und Vorstandserstellung auf Kleinbuchstaben normalisiert (`strings.ToLower`). Damit funktioniert der Login jetzt unabhängig von Groß-/Kleinschreibung.
   - `internal/api/auth_handler.go` – `handleLogin()` und `handleRegister()`
   - `internal/api/invite_handler.go` – `handleInviteMember()`
